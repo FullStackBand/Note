@@ -1,4 +1,4 @@
-#一、整合测试环境
+# 一、整合测试环境
 开发工具：IntelliJ IDEA 2018.2.3 x64
 springboot: 2.0.5
 jdk：1.8
@@ -6,8 +6,9 @@ maven:4.0.0、
 其他功能
 PageHelper 分页插件
 mybatis generator 自动生成代码插件
-#二、创建工程
-##1.启动器
+# 二、创建工程
+## 1.启动器
+
 * 使用开工具的 -  Spring Initializr  快速创建
   * 启动器
     1. Web
@@ -114,11 +115,12 @@ mybatis generator 自动生成代码插件
     </build>
 </project>
 ```
-#三、全局配置
-##1.文件目录
+# 三、全局配置
+## 1.文件目录
 ![文件目录](https://upload-images.jianshu.io/upload_images/13055171-e47eb91c8ecf4b6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##2.application.yml
+## 2.application.yml
+
 ```yml
 spring:
   datasource:
@@ -159,7 +161,8 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
 ```
-四、创建数据库
+# 四、创建数据库
+
 ```sql
 CREATE TABLE `person` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -169,8 +172,8 @@ CREATE TABLE `person` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
 ```
-#五、使用mybatis generator 生成文件
-##1. 添加Generator工具
+# 五、使用mybatis generator 生成文件
+## 1. 添加Generator工具
 ![](https://upload-images.jianshu.io/upload_images/13055171-8d2bb136d17bc8a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![](https://upload-images.jianshu.io/upload_images/13055171-9555dc191f9382ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -218,10 +221,11 @@ CREATE TABLE `person` (
     </context>
 </generatorConfiguration>
 ```
-##3.生成
+## 3.生成
 ![微信截图_20180915172838.png](https://upload-images.jianshu.io/upload_images/13055171-4beb31c472064e95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-##4.生成的文件
-###Person.java
+## 4.生成的文件
+### Person.java
+
 ```java
 package com.luke.springbootmybatis.pojo;
 
@@ -289,7 +293,8 @@ public interface PersonMapper {
     int updateByPrimaryKey(Person record);
 }
 ```
-###PersonMapper.xml
+### PersonMapper.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -315,7 +320,8 @@ public class SpringbootMybatisApplication {
 }
 
 ```
-#七、编写一个简单的测试
+# 七、编写一个简单的测试
+
 ```java
 @RestController
 public class PersonController {
@@ -345,4 +351,4 @@ public class PersonController {
 
 
 
-    
+​    
